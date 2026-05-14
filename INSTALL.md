@@ -1,4 +1,4 @@
-# cc-imessage-remote-control — install reference
+# cc-imessage-remote-control, install reference
 
 ## Pure Claude Code commands (recommended)
 
@@ -23,7 +23,7 @@ The setup wizard walks you through writing the config, picking the exact Shortcu
 bash <(curl -fsSL https://raw.githubusercontent.com/nathan-hekman/cc-imessage-remote-control/main/install-claude-code.sh)
 ```
 
-Clones the repo to a temp dir and runs `install.sh --force`. Same end state as the two `claude plugin` commands above. Idempotent — safe to re-run.
+Clones the repo to a temp dir and runs `install.sh --force`. Same end state as the two `claude plugin` commands above. Idempotent, safe to re-run.
 
 ## Local clone install
 
@@ -54,7 +54,7 @@ cd cc-imessage-remote-control
 | `$CLAUDE_CONFIG_DIR/plugins/cache/cc-imessage-remote-control/cc-imessage-remote-control/<commit>/` | Plugin install (scripts, hooks, skills, commands) |
 | `$CLAUDE_CONFIG_DIR/.cc-imessage-env` | Your config (phone number, prefix, model, project roots) |
 | `$CLAUDE_CONFIG_DIR/.cc-imessage-logs/router.log` | Append-only run log |
-| `$CLAUDE_CONFIG_DIR/.cc-imessage-update-available` | Sentinel — written by update-check hook when a newer release exists |
+| `$CLAUDE_CONFIG_DIR/.cc-imessage-update-available` | Sentinel, written by update-check hook when a newer release exists |
 
 `$CLAUDE_CONFIG_DIR` defaults to `~/.claude`.
 
@@ -83,4 +83,4 @@ Then open Shortcuts.app and delete the **Run claude launcher** shortcut and the 
 
 ## Mobile mode prerequisites
 
-None. The "mobile" experience here is just iMessage on your iPhone — no GitHub Pages, no separate publish step. You text your Mac; your Mac texts you back. The iOS Claude app handles the Remote Control side.
+None. The "mobile" experience here is just iMessage on your iPhone, no GitHub Pages, no separate publish step. You text your Mac; your Mac texts you back. The iOS Claude app handles the Remote Control side.

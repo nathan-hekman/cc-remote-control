@@ -5,24 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg">
 <link rel="apple-touch-icon" href="assets/logo-mark.png">
-<title>cc-imessage-remote-control — text yourself a Claude Code session</title>
-<meta name="description" content="Text 'Claude eBay' to your own iPhone — your Mac opens a Claude Code session in that project, Remote Control on, ready to drive from the iOS Claude app. No chat.db reading. Native macOS Shortcuts only.">
+<title>cc-imessage-remote-control · text yourself a Claude Code session</title>
+<meta name="description" content="Text 'Claude eBay' to your own iPhone, your Mac opens a Claude Code session in that project, Remote Control on, ready to drive from the iOS Claude app. No chat.db reading. Native macOS Shortcuts only.">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nathan-hekman.github.io/cc-imessage-remote-control/">
-<meta property="og:title" content="cc-imessage-remote-control — text yourself a Claude Code session">
-<meta property="og:description" content="iMessage starts the session. Claude Code Remote Control drives it from your phone. Native macOS Shortcuts — no chat.db reading.">
+<meta property="og:title" content="cc-imessage-remote-control · text yourself a Claude Code session">
+<meta property="og:description" content="iMessage starts the session. Claude Code Remote Control drives it from your phone. Native macOS Shortcuts, no chat.db reading.">
 <meta property="og:image" content="https://nathan-hekman.github.io/cc-imessage-remote-control/assets/social-card.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="cc-imessage-remote-control — text yourself a Claude Code session. Native macOS Shortcuts. No chat.db reading.">
+<meta property="og:image:alt" content="cc-imessage-remote-control · text yourself a Claude Code session. Native macOS Shortcuts. No chat.db reading.">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="cc-imessage-remote-control">
-<meta name="twitter:description" content="Text yourself a Claude Code session. Native macOS Shortcuts — no chat.db reading.">
+<meta name="twitter:description" content="Text yourself a Claude Code session. Native macOS Shortcuts, no chat.db reading.">
 <meta name="twitter:image" content="https://nathan-hekman.github.io/cc-imessage-remote-control/assets/social-card.png">
-<meta name="twitter:image:alt" content="cc-imessage-remote-control — text yourself a Claude Code session. Native macOS Shortcuts. No chat.db reading.">
+<meta name="twitter:image:alt" content="cc-imessage-remote-control · text yourself a Claude Code session. Native macOS Shortcuts. No chat.db reading.">
 
 <style>
   :root {
@@ -78,36 +78,67 @@
   /* Top bar */
   .top { padding: 22px 0 0; }
   .top .row { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
-  .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 700; letter-spacing: -0.01em; text-decoration: none; }
-  .brand img.mark { display: block; width: 28px; height: 34px; }
-  .brand:hover { text-decoration: none; }
-  .top a.ghlink { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); padding: 7px 14px; border: 1px solid var(--rule-strong); border-radius: 999px; font-weight: 500; font-size: 14px; }
-  .top a.ghlink:hover { color: var(--ink); border-color: var(--ink); text-decoration: none; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 700; letter-spacing: -0.01em; text-decoration: none; transition: opacity 180ms cubic-bezier(0.16, 1, 0.3, 1); }
+  .brand img.mark { display: block; height: 26px; width: auto; }
+  .brand:hover { text-decoration: none; opacity: 0.78; }
+  .brand:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+  .top a.ghlink { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); padding: 7px 14px; border: 1px solid var(--rule-strong); border-radius: 999px; font-weight: 500; font-size: 14px; transition: color 180ms cubic-bezier(0.16, 1, 0.3, 1), border-color 180ms cubic-bezier(0.16, 1, 0.3, 1), transform 180ms cubic-bezier(0.16, 1, 0.3, 1); }
+  .top a.ghlink:hover { color: var(--ink); border-color: var(--ink); text-decoration: none; transform: translateY(-1px); }
+  .top a.ghlink:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
   /* HERO */
-  .hero { padding: 48px 0 28px; text-align: center; position: relative; }
-  .hero-mark { display: block; margin: 0 auto 22px; height: 130px; width: auto; }
-  .kicker { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin: 0 0 18px; }
-  h1 { font-family: "Georgia", "New York", serif; font-weight: 500; font-size: 56px; line-height: 1.05; letter-spacing: -0.022em; margin: 0 auto 18px; max-width: 16ch; }
+  .hero { padding: 28px 0 36px; text-align: center; position: relative; }
+  .hero-mark { display: block; margin: 0 auto 14px; height: 96px; width: auto; transform: rotate(-2deg); transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1); }
+  .hero-mark:hover { transform: rotate(2deg) scale(1.03); }
+  .kicker { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin: 0 0 14px; }
+  h1 { font-family: "Georgia", "New York", serif; font-weight: 500; font-size: 56px; line-height: 1.04; letter-spacing: -0.022em; margin: 0 auto 18px; max-width: 19ch; }
   h1 .accent { color: var(--accent); position: relative; display: inline-block; }
   h1 .accent::after { content: ""; position: absolute; left: -3%; right: -3%; bottom: 0.04em; height: 0.4em; background: var(--highlight); z-index: -1; transform: rotate(-0.6deg); }
-  .subhead { font-size: 19px; color: var(--ink-soft); max-width: 52ch; margin: 0 auto 28px; }
-  .cta { display: inline-flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; justify-content: center; }
-  .btn { display: inline-block; padding: 11px 22px; border-radius: 999px; font-weight: 600; font-size: 15px; border: 1px solid transparent; transition: transform 0.08s ease; }
-  .btn:hover { text-decoration: none; transform: translateY(-1px); }
+  .subhead { font-size: 19px; color: var(--ink-soft); max-width: 52ch; margin: 0 auto 30px; }
+  .cta { display: inline-flex; gap: 10px; margin-top: 8px; flex-wrap: wrap; justify-content: center; }
+  .btn { display: inline-block; padding: 12px 24px; border-radius: 999px; font-weight: 600; font-size: 15px; border: 1px solid transparent; transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1), border-color 220ms cubic-bezier(0.16, 1, 0.3, 1); }
+  .btn:hover { text-decoration: none; transform: translateY(-2px); }
+  .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { box-shadow: 0 6px 18px rgba(10, 132, 255, 0.18); }
   .btn-secondary { background: transparent; color: var(--ink); border-color: var(--rule-strong); }
   .btn-secondary:hover { border-color: var(--ink); }
 
-  /* Section base */
-  section { padding: 56px 0; }
-  section.alt { background: var(--paper-2); }
+  /* Section base, rhythm varies by content density */
+  section { padding: 64px 0; scroll-margin-top: 32px; }
+  section.alt { background: var(--paper-2); padding: 72px 0; }
+  section.tight { padding: 48px 0; }
   section.alt-deep { background: var(--paper-3); }
-  h2 { font-family: "Georgia", "New York", serif; font-weight: 500; font-size: 36px; line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 14px; }
+  h2 { font-family: "Georgia", "New York", serif; font-weight: 500; font-size: 38px; line-height: 1.12; letter-spacing: -0.012em; margin: 0 0 14px; }
   h2 .accent { color: var(--accent); }
   h2 .marker { background: var(--highlight); padding: 0 6px; border-radius: 3px; }
-  .lede { font-size: 17px; color: var(--ink-soft); max-width: 62ch; }
-  h3 { font-weight: 700; font-size: 18px; margin: 24px 0 8px; }
+  .lede { font-size: 17.5px; color: var(--ink-soft); max-width: 62ch; }
+  h3 { font-weight: 700; font-size: 18px; margin: 24px 0 8px; letter-spacing: -0.005em; }
+
+  /* Pull quote, used in differentiator section to break up the lede block */
+  .pull {
+    margin: 28px 0;
+    padding: 22px 26px 22px 30px;
+    border-left: none;
+    background: var(--paper-2);
+    border-radius: 12px;
+    font-family: "Georgia", "New York", serif;
+    font-size: 22px;
+    line-height: 1.35;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    max-width: 38em;
+    position: relative;
+  }
+  .pull::before {
+    content: "";
+    position: absolute;
+    left: 16px; top: 22px; bottom: 22px;
+    width: 3px;
+    border-radius: 2px;
+    background: var(--accent);
+  }
+  .pull .pull-attr { display: block; margin-top: 10px; font-family: inherit; font-size: 14px; color: var(--muted); font-style: normal; letter-spacing: 0.06em; text-transform: uppercase; }
 
   /* Diagram */
   .diagram { background: var(--paper); border: 1px solid var(--rule); border-radius: 14px; padding: 28px 18px 14px; margin: 0 0 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.04); }
@@ -127,13 +158,17 @@
   table.diff td.them { color: var(--muted); }
 
   /* FAQ */
-  .faq details { border-top: 1px solid var(--rule); padding: 16px 0; }
+  .faq details { border-top: 1px solid var(--rule); padding: 18px 0; transition: padding 220ms cubic-bezier(0.16, 1, 0.3, 1); }
   .faq details:last-child { border-bottom: 1px solid var(--rule); }
-  .faq summary { font-weight: 600; font-size: 17px; cursor: pointer; list-style: none; padding-right: 24px; position: relative; }
+  .faq details[open] { padding: 18px 0 22px; }
+  .faq summary { font-weight: 600; font-size: 17px; cursor: pointer; list-style: none; padding-right: 32px; position: relative; transition: color 180ms cubic-bezier(0.16, 1, 0.3, 1); }
+  .faq summary:hover { color: var(--accent); }
+  .faq summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
   .faq summary::-webkit-details-marker { display: none; }
-  .faq summary::after { content: "+"; position: absolute; right: 0; top: 0; font-weight: 400; font-size: 22px; color: var(--muted); transition: transform 0.2s; }
-  .faq details[open] summary::after { content: "–"; }
-  .faq .answer { color: var(--ink-soft); font-size: 15.5px; margin-top: 10px; max-width: 64ch; }
+  .faq summary::after { content: "+"; position: absolute; right: 0; top: -1px; font-weight: 400; font-size: 22px; color: var(--muted); transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), color 180ms cubic-bezier(0.16, 1, 0.3, 1); }
+  .faq summary:hover::after { color: var(--accent); }
+  .faq details[open] summary::after { content: "−"; transform: rotate(180deg); }
+  .faq .answer { color: var(--ink-soft); font-size: 15.5px; margin-top: 12px; max-width: 64ch; line-height: 1.55; }
 
   /* Screenshots */
   .shots { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 20px; }
@@ -145,23 +180,47 @@
   }
 
   /* Install card */
-  .install-card { background: var(--paper); border: 1px solid var(--rule); border-radius: 14px; padding: 26px; margin-top: 22px; }
-  .install-card h3 { margin-top: 0; }
+  .install-card { background: var(--paper); border: 1px solid var(--rule); border-radius: 14px; padding: 28px 30px; margin-top: 22px; position: relative; transition: border-color 220ms cubic-bezier(0.16, 1, 0.3, 1), transform 220ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1); }
+  .install-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.05); }
+  .install-card h3 { margin-top: 0; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .install-card.recommended { border-color: var(--accent); }
+  .install-card.recommended::before {
+    content: "Recommended";
+    position: absolute; top: -10px; left: 24px;
+    background: var(--accent); color: #fff;
+    padding: 3px 10px; border-radius: 999px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .install-card pre { margin: 14px 0; }
+  .install-card p { margin: 14px 0 0; color: var(--ink-soft); font-size: 15.5px; line-height: 1.55; }
+
+  /* Screenshots */
 
   /* Footer */
-  footer { padding: 36px 0 56px; color: var(--muted); font-size: 14px; text-align: center; }
-  footer a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--rule-strong); }
-  footer a:hover { color: var(--ink); }
+  footer { padding: 40px 0 56px; color: var(--muted); font-size: 14px; text-align: center; border-top: 1px solid var(--rule); margin-top: 8px; }
+  footer a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--rule-strong); text-underline-offset: 3px; transition: color 180ms cubic-bezier(0.16, 1, 0.3, 1); }
+  footer a:hover { color: var(--ink); text-decoration-color: var(--ink); }
 
   @media (max-width: 760px) {
-    h1 { font-size: 38px; }
+    h1 { font-size: 38px; max-width: 22ch; }
     h2 { font-size: 28px; }
     .wrap { padding: 0 22px; }
-    .hero { padding: 36px 0 20px; }
-    section { padding: 40px 0; }
+    .hero { padding: 20px 0 28px; }
+    .hero-mark { height: 80px; margin-bottom: 12px; }
+    section { padding: 44px 0; }
+    section.alt { padding: 48px 0; }
     .diagram .flow-svg { display: none; }
     .flow-fallback { display: block; }
     .diagram { padding: 18px 14px 12px; }
+    .pull { font-size: 18px; padding: 18px 20px 18px 24px; }
+    .install-card { padding: 22px 22px; }
+    .install-card.recommended::before { left: 16px; }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    .hero-mark { transform: none !important; }
   }
 </style>
 </head>
@@ -181,7 +240,7 @@
 
 <section class="hero">
   <div class="wrap">
-    <img class="hero-mark" src="assets/logo-mark.svg" alt="cc-imessage-remote-control logo — a TiVo-style smiling TV with a colorful CC wordmark.">
+    <img class="hero-mark" src="assets/logo-mark.svg" alt="cc-imessage-remote-control logo, a TiVo-style smiling TV with a colorful CC wordmark.">
     <p class="kicker">Claude Code · iMessage Bridge</p>
     <h1>Text yourself <span class="accent">a Claude Code session</span>.</h1>
     <p class="subhead">
@@ -197,13 +256,13 @@
 <section class="alt">
   <div class="wrap">
     <h2>How the trip works.</h2>
-    <p class="lede">One iMessage in. One Terminal pop on the Mac. One session live in the iOS Claude app. Apple Push handles the network — no Tailscale, no VPN, no chat.db.</p>
+    <p class="lede">One iMessage in. One Terminal pop on the Mac. One session live in the iOS Claude app. Apple Push handles the network, no Tailscale, no VPN, no chat.db.</p>
     <div class="diagram">
       <img class="flow-svg" src="assets/flow-diagram.svg" alt="iPhone texts 'Claude eBay'. Mac runs Shortcuts filter, classifies the phrase via Haiku, opens Terminal with claude --remote-control. Session shows up live in the iOS Claude app." />
       <ol class="flow-fallback" aria-label="Flow steps">
-        <li><strong>iPhone</strong> — you text <code>Claude eBay</code> to your own number.</li>
-        <li><strong>Mac</strong> — Shortcuts filter matches, Haiku maps <code>eBay</code> → <code>ebay-scrape-new</code>, Terminal opens with <code>claude --remote-control</code>.</li>
-        <li><strong>iOS Claude app</strong> — the new session shows up live in the Code tab. Tap to drive.</li>
+        <li><strong>iPhone</strong>, you text <code>Claude eBay</code> to your own number.</li>
+        <li><strong>Mac</strong>, Shortcuts filter matches, Haiku maps <code>eBay</code> → <code>ebay-scrape-new</code>, Terminal opens with <code>claude --remote-control</code>.</li>
+        <li><strong>iOS Claude app</strong>, the new session shows up live in the Code tab. Tap to drive.</li>
       </ol>
       <p class="caption">iMessage starts the session. Claude Code Remote Control drives it from there. Nothing reads <code>chat.db</code>.</p>
     </div>
@@ -213,15 +272,21 @@
 <section>
   <div class="wrap">
     <h2>What makes it <span class="marker">different</span>.</h2>
-    <p class="lede">Other "iMessage for Claude" bridges work by reading <code>~/Library/Messages/chat.db</code> — your <strong>entire iMessage history</strong>. <a href="https://bluebubbles.app/">BlueBubbles</a> works that way. Anthropic's own iMessage integration works that way. It's powerful, but it's a giant trust ask.</p>
-    <p class="lede" style="margin-top: 12px;">This bridge doesn't read <code>chat.db</code>. It rides <strong>native macOS Shortcuts</strong> — Apple's first-party "When I get a message" Personal Automation — which gates every trigger by <code>Sender = you</code> + <code>Contains "claude"</code> <em>before</em> the script sees a byte. The shell only ever receives the one matched message body.</p>
+    <p class="lede">Other "iMessage for Claude" bridges read <code>~/Library/Messages/chat.db</code>, your <strong>entire iMessage history</strong>. <a href="https://bluebubbles.app/">BlueBubbles</a> works that way. Anthropic's own iMessage integration works that way. Powerful, but a giant trust ask.</p>
+
+    <blockquote class="pull">
+      This bridge doesn't read <code>chat.db</code>. The shell only ever sees the one message that matched your Shortcut filter.
+      <span class="pull-attr">Native macOS Shortcuts · Apple-first-party trigger gate</span>
+    </blockquote>
+
+    <p class="lede">It rides Apple's first-party "When I get a message" Personal Automation, which gates every trigger by <code>Sender = you</code> + <code>Contains "claude"</code> <em>before</em> the script sees a byte.</p>
 
     <table class="diff" role="table">
       <thead>
         <tr><th></th><th class="us">cc-imessage-remote-control</th><th>BlueBubbles / chat.db readers</th></tr>
       </thead>
       <tbody>
-        <tr><td><strong>Reads chat.db</strong></td><td class="us">No</td><td class="them">Yes — full history</td></tr>
+        <tr><td><strong>Reads chat.db</strong></td><td class="us">No</td><td class="them">Yes, full history</td></tr>
         <tr><td><strong>Sees other contacts' messages</strong></td><td class="us">No</td><td class="them">Yes</td></tr>
         <tr><td><strong>Trigger gate</strong></td><td class="us">macOS Shortcuts (Apple-native)</td><td class="them">Custom listener / MCP server</td></tr>
         <tr><td><strong>What the shell sees</strong></td><td class="us">One matched message body</td><td class="them">Anything the agent asks for</td></tr>
@@ -230,14 +295,14 @@
       </tbody>
     </table>
 
-    <p class="lede" style="margin-top: 22px;">If you wouldn't grant a third-party app permission to read every iMessage you've ever sent — this is the bridge you want.</p>
+    <p class="lede" style="margin-top: 22px;">If you wouldn't grant a third-party app permission to read every iMessage you've ever sent, this is the bridge you want.</p>
   </div>
 </section>
 
 <section class="alt">
   <div class="wrap">
     <h2>Set it up <span class="marker">once</span>.</h2>
-    <p class="lede">One shortcut in Shortcuts.app + one Personal Automation that triggers it. The setup wizard inside Claude Code does the path-pasting for you — these screenshots are reference.</p>
+    <p class="lede">One shortcut in Shortcuts.app + one Personal Automation that triggers it. The setup wizard inside Claude Code does the path-pasting for you, these screenshots are reference.</p>
 
     <div class="shots">
       <figure>
@@ -261,17 +326,17 @@
     <h2>Install.</h2>
     <p class="lede">It's a Claude Code plugin. Two commands and a restart.</p>
 
-    <div class="install-card">
-      <h3>Recommended — Claude Code plugin manager</h3>
+    <div class="install-card recommended">
+      <h3>Claude Code plugin manager</h3>
 <pre><code>claude plugin marketplace add nathan-hekman/cc-imessage-remote-control
 claude plugin install cc-imessage-remote-control@cc-imessage-remote-control</code></pre>
-      <p>Restart Claude Code, then run <code>/cc-imessage setup</code>. The wizard collects your phone number, writes the config file (mode 600, in your home dir — never in the plugin cache), prints the exact line to paste into Shortcuts, opens Shortcuts.app, and runs a self-test ping. ~5 minutes start to finish.</p>
+      <p>Restart Claude Code, then run <code>/cc-imessage setup</code>. The wizard collects your phone number, writes the config file (mode 600, in your home dir, never in the plugin cache), prints the exact line to paste into Shortcuts, opens Shortcuts.app, and runs a self-test ping. About 5 minutes start to finish.</p>
     </div>
 
     <div class="install-card">
       <h3>One-liner</h3>
 <pre><code>bash &lt;(curl -fsSL https://raw.githubusercontent.com/nathan-hekman/cc-imessage-remote-control/main/install-claude-code.sh)</code></pre>
-      <p>Clones the repo to a temp dir and runs the installer. Idempotent — safe to re-run.</p>
+      <p>Clones the repo to a temp dir and runs the installer. Idempotent. Safe to re-run.</p>
     </div>
 
     <p style="margin-top: 22px;">Full install reference, including local clone and uninstall: <a href="https://github.com/nathan-hekman/cc-imessage-remote-control/blob/main/INSTALL.md">INSTALL.md</a>. Security model: <a href="https://github.com/nathan-hekman/cc-imessage-remote-control/blob/main/SECURITY.md">SECURITY.md</a>.</p>
@@ -285,17 +350,17 @@ claude plugin install cc-imessage-remote-control@cc-imessage-remote-control</cod
 
       <details>
         <summary>Do I need Tailscale, a VPN, or to be on the same Wi-Fi as my Mac?</summary>
-        <p class="answer">No. iMessage rides Apple's push network — works from anywhere with cell signal. <code>claude --remote-control</code> registers the session with the Anthropic cloud, which your iOS Claude app reaches over its own internet. The only requirement is that your Mac is powered on, awake, and signed into iMessage. (Turn on "Wake for network access" in Energy Saver if you want to text-trigger while the Mac is asleep.)</p>
+        <p class="answer">No. iMessage rides Apple's push network. Works from anywhere with cell signal. <code>claude --remote-control</code> registers the session with the Anthropic cloud, which your iOS Claude app reaches over its own internet. The only requirement is that your Mac is powered on, awake, and signed into iMessage. (Turn on "Wake for network access" in Energy Saver if you want to text-trigger while the Mac is asleep.)</p>
       </details>
 
       <details>
         <summary>Does this give Claude access to my entire iMessage history?</summary>
-        <p class="answer"><strong>No.</strong> The router only ever sees one message at a time — the body of the message that matched your Shortcut filter. Shortcuts passes that body to the shell as <code>$1</code>. Haiku is asked to map that one phrase to a project slug from a fixed allow-list of your folder names. Nothing reads <code>chat.db</code> or any other Messages storage.</p>
+        <p class="answer"><strong>No.</strong> The router only ever sees one message at a time, the body of the message that matched your Shortcut filter. Shortcuts passes that body to the shell as <code>$1</code>. Haiku is asked to map that one phrase to a project slug from a fixed allow-list of your folder names. Nothing reads <code>chat.db</code> or any other Messages storage.</p>
       </details>
 
       <details>
         <summary>How is this different from BlueBubbles or Anthropic's official iMessage integration?</summary>
-        <p class="answer">Both of those work by reading your full chat database (<code>~/Library/Messages/chat.db</code>) so a model can see every iMessage you've ever sent. This bridge does <strong>not</strong> do that. It uses Apple's native macOS Personal Automation in Shortcuts.app as the trigger gate — same trust model as any Shortcut you'd build yourself. The bridge can't see any conversation it isn't explicitly triggered on, by you, with the word "claude".</p>
+        <p class="answer">Both of those work by reading your full chat database (<code>~/Library/Messages/chat.db</code>) so a model can see every iMessage you've ever sent. This bridge does <strong>not</strong> do that. It uses Apple's native macOS Personal Automation in Shortcuts.app as the trigger gate, same trust model as any Shortcut you'd build yourself. The bridge can't see any conversation it isn't explicitly triggered on, by you, with the word "claude".</p>
       </details>
 
       <details>
@@ -305,12 +370,12 @@ claude plugin install cc-imessage-remote-control@cc-imessage-remote-control</cod
 
       <details>
         <summary>Can the bridge run dangerous shell commands from my texts?</summary>
-        <p class="answer">The message body is <strong>never executed as shell</strong>. It's passed as a string argument to Claude Haiku, which is constrained to return one slug from a fixed allow-list of your own folder names. Anything else returns <code>NONE</code>. Once the Claude Code session is running, normal Claude Code permissions apply — same as if you opened the project yourself.</p>
+        <p class="answer">The message body is <strong>never executed as shell</strong>. It's passed as a string argument to Claude Haiku, which is constrained to return one slug from a fixed allow-list of your own folder names. Anything else returns <code>NONE</code>. Once the Claude Code session is running, normal Claude Code permissions apply, same as if you opened the project yourself.</p>
       </details>
 
       <details>
         <summary>Does this cost anything per message?</summary>
-        <p class="answer">A tiny amount. Each trigger fires one Claude Haiku 4.5 call to classify the project name — a few hundred tokens, well under $0.001 per text. The coding session itself uses your normal Claude Code plan.</p>
+        <p class="answer">A tiny amount. Each trigger fires one Claude Haiku 4.5 call to classify the project name, a few hundred tokens, well under $0.001 per text. The coding session itself uses your normal Claude Code plan.</p>
       </details>
 
       <details>
