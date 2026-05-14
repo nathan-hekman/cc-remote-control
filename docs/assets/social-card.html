@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>cc-imessage-remote-control</title>
+<style>
+  html, body { margin: 0; padding: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: #faf8f4;
+    color: #1a1a1a;
+    font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Inter, sans-serif;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    padding: 60px 80px;
+    box-sizing: border-box;
+    position: relative;
+  }
+  .brand {
+    position: absolute; top: 40px; left: 80px;
+    display: inline-flex; align-items: center; gap: 12px;
+    font-weight: 700; font-size: 18px; letter-spacing: -0.005em; color: #1a1a1a;
+  }
+  .brand .dot { width: 12px; height: 12px; border-radius: 50%; background: #0a84ff; box-shadow: 0 0 0 3px #d9ebff; }
+  .kicker {
+    font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: #6b6258; font-weight: 700; margin: 0 0 18px;
+    align-self: flex-start;
+  }
+  h1 {
+    font-family: "Georgia", "New York", serif; font-weight: 500;
+    font-size: 78px; line-height: 1.04; letter-spacing: -0.022em;
+    margin: 0 0 22px;
+    text-align: left; align-self: flex-start;
+    max-width: 18ch;
+  }
+  h1 .accent { color: #0a84ff; position: relative; display: inline-block; }
+  h1 .accent::after {
+    content: ""; position: absolute; left: -3%; right: -3%; bottom: 0.04em;
+    height: 0.4em; background: #fbe7a3; z-index: -1; transform: rotate(-0.5deg);
+  }
+  .subhead {
+    font-size: 24px; color: #3a342e; max-width: 56ch; line-height: 1.4;
+    text-align: left; align-self: flex-start; margin: 0 0 26px;
+  }
+  .subhead code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.85em; background: #f3eee4; padding: 2px 9px; border-radius: 5px;
+  }
+  .pills {
+    display: flex; gap: 12px; align-self: flex-start; flex-wrap: wrap;
+  }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 18px; border-radius: 999px;
+    background: #ffffff; border: 1px solid #c8c0b0;
+    font-size: 16px; font-weight: 600; color: #1a1a1a;
+  }
+  .pill .pdot { width: 8px; height: 8px; border-radius: 50%; background: #27c93f; }
+  .pill.warn .pdot { background: #ff5f56; }
+  .footer {
+    position: absolute; bottom: 40px; left: 80px; right: 80px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 16px; color: #6b6258; font-weight: 500;
+  }
+  .footer .stamp { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; }
+</style>
+</head>
+<body>
+  <span class="brand"><span class="dot"></span>cc-imessage-remote-control</span>
+
+  <p class="kicker">Claude Code · iMessage Bridge</p>
+  <h1>Text yourself <span class="accent">a Claude Code session</span>.</h1>
+  <p class="subhead">
+    iMessage <code>Claude eBay</code> to your own number. Your Mac opens the project, Remote Control on, ready to drive from the iOS Claude app.
+  </p>
+  <div class="pills">
+    <span class="pill"><span class="pdot"></span>Native macOS Shortcuts</span>
+    <span class="pill warn"><span class="pdot"></span>No chat.db reading</span>
+    <span class="pill"><span class="pdot"></span>Pro &amp; Max plans</span>
+  </div>
+
+  <div class="footer">
+    <span>github.com/nathan-hekman/cc-imessage-remote-control</span>
+    <span class="stamp">MIT · v0.1.0</span>
+  </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "cc-imessage-remote-control",
+  "version": "0.1.0",
+  "description": "Text 'Claude eBay' to your own iPhone — your Mac opens a Claude Code session in that project, Remote Control on, ready to drive from the iOS Claude app. iMessage starts the session; Claude Code Remote Control takes it from there.",
+  "author": {
+    "name": "Nathan Hekman",
+    "url": "https://github.com/nathan-hekman"
+  },
+  "homepage": "https://nathan-hekman.github.io/cc-imessage-remote-control/",
+  "repository": "https://github.com/nathan-hekman/cc-imessage-remote-control",
+  "license": "MIT",
+  "keywords": ["imessage", "remote-control", "shortcuts", "macos", "mobile", "ios", "haiku"],
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/cc-imessage-update-check.js\" >/dev/null 2>&1 &",
+            "timeout": 2
+          }
+        ]
+      }
+    ]
+  }
+}

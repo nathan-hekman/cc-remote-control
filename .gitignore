@@ -1,0 +1,27 @@
+# Local config (per-user, contains phone number)
+.env
+
+# Local runtime state
+logs/
+*.log
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local notes
+TODO.local
+NOTES.local
+*.local.md
+
+# Plugin runtime state (must never be committed)
+.cc-imessage-active
+.cc-imessage-update-available
+.cc-imessage-update-check
