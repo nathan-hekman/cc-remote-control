@@ -84,5 +84,5 @@ Next step — wire it into macOS Shortcuts:
      prints the exact line to paste into Shortcuts.app, and walks you
      through the automation.
 
-Or read the docs first: https://nathan-hekman.github.io/cc-imessage-remote-control/
+Or read the docs first: https://github.com/nathan-hekman/cc-imessage-remote-control
 EOF

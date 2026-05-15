@@ -1,12 +1,12 @@
 {
   "name": "cc-imessage-remote-control",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Text yourself 'Claude <projectname>'. Your Mac opens a new local Claude Code session in that project with /remote-control enabled, ready to drive from the Claude mobile app. All running on your Mac. No giving Claude full access to your iMessage chats.",
   "author": {
     "name": "Nathan Hekman",
     "url": "https://github.com/nathan-hekman"
   },
-  "homepage": "https://nathan-hekman.github.io/cc-imessage-remote-control/",
+  "homepage": "https://github.com/nathan-hekman/cc-imessage-remote-control",
   "repository": "https://github.com/nathan-hekman/cc-imessage-remote-control",
   "license": "MIT",
   "keywords": ["imessage", "remote-control", "shortcuts", "macos", "mobile", "ios", "haiku"],

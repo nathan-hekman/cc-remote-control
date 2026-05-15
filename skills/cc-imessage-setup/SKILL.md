@@ -26,7 +26,7 @@ answer.
 
 ## Step 1 — Collect required config
 
-Ask the user three things (use AskUserQuestion for the first, plain text
+Ask the user four things (use AskUserQuestion for Q1, plain text
 for the rest):
 
 **Q1 (multi-select=false, two options):**
@@ -35,14 +35,27 @@ for the rest):
 - If A, ask plainly for the number. If B, ask for both the *trigger*
   number (sender filter) and the *reply* number separately.
 
-**Q2 — projects root.** Ask: "Where do your code projects live? Default
-is `$HOME/Documents`. Press enter to accept, or paste a different path."
-Validate the path exists (`[ -d "$path" ]`).
+**Q2 — projects root (where to fuzzy-search).** Ask: "Where do your
+code projects live? When you text 'Claude foo', the router fuzzy-matches
+'foo' against folder names one level deep inside this directory.
+Default is `$HOME/Documents`. Press enter to accept, or paste a
+different path." Validate the path exists (`[ -d "$path" ]`).
 
-**Q3 — extra dirs (optional).** Ask: "Do you keep some projects nested
-one level deeper (e.g. `~/Documents/Other Projects/`)? If yes, paste the
-parent dir; the router will scan one level into it too. Otherwise press
-enter."
+**Q3 — extra search dirs (optional).** Ask: "Do you keep projects in
+*additional* directories? Common case: `~/Documents/Other Projects/`
+or `~/code/`. Paste a comma-separated list, or press enter to skip.
+Each dir is scanned one level deep, same as the main root." Validate
+each path.
+
+**Q4 — exclude list (optional).** Ask: "Any folders to *skip* during
+fuzzy-match? Useful for things like `node_modules`, `Zoom`, archive
+dirs. Paste a comma-separated list of basenames, or press enter to
+skip. Dotfiles are always skipped automatically."
+
+**Claude launch mode is not configurable.** The router always runs
+`claude --remote-control "<slug>"` — that's the whole point of the
+plugin (drive the session from the iOS Claude app). Don't ask the
+user about this.
 
 ## Step 2 — Write the config file
 
@@ -57,7 +70,7 @@ IMESSAGE_PREFIX="[CR]"
 ROUTER_MODEL="claude-haiku-4-5-20251001"
 PROJECTS_ROOT="<projects-root>"
 PROJECTS_ROOT_EXTRA="<extra-or-empty>"
-PROJECTS_EXCLUDE=""
+PROJECTS_EXCLUDE="<exclude-or-empty>"
 EOF
 chmod 600 "$CONFIG_FILE"
 ```
@@ -160,7 +173,7 @@ Print these one-liners they should bookmark:
 - `/cc-imessage test` — run the router locally (no iMessage round-trip)
 - `/cc-imessage tail` — last 20 log lines
 
-Plus the live docs URL: https://nathan-hekman.github.io/cc-imessage-remote-control/
+Plus the repo URL: https://github.com/nathan-hekman/cc-imessage-remote-control
 
 ## Style
 

@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "cc-imessage-remote-control",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "description": "Spin up Claude Code Remote Control sessions on your Mac via iMessage. The plugin ships the router scripts plus an interactive setup wizard.",
       "source": "./",
       "category": "productivity"

@@ -2,9 +2,10 @@
 
 ## Register
 
-**brand** — this repo's landing page (`docs/index.html`) and social card are
-marketing surfaces for an open-source developer tool. Design IS the product
-on those surfaces; the README + INSTALL docs are secondary.
+**brand** — the README is the primary marketing surface (logo, hero,
+tagline). Social card is the secondary surface (OG/Twitter unfurl).
+Design IS the product on those surfaces; the INSTALL/SECURITY docs are
+deeper-dive secondary material.
 
 ## Users
 
@@ -82,14 +83,15 @@ What this landing page must **not** look or sound like:
 
 ## Surfaces
 
-- `docs/index.html` — GitHub Pages landing. Primary marketing surface.
+- `README.md` — primary marketing surface. Logo + hero + tagline.
+  Snappy and short; depth lives in INSTALL/SECURITY.
 - `docs/assets/social-card.html` → `social-card.png` — Open Graph /
   Twitter unfurl image (1200×630).
 - `docs/assets/logo-mark.svg` + `.png` — brand mark (two CC letters +
   adaptive smile). The smile is dark on light backgrounds, light on
   dark — via `prefers-color-scheme` inside the SVG.
-- README.md — secondary; should mirror the landing's voice but tolerate
-  more density.
+- `docs/assets/hero-flow-v2.png` — the iMessage → Mac → iOS-Claude
+  flow image embedded in the README.
 
 ## Out of scope for this document
 

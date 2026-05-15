@@ -37,7 +37,7 @@ claude plugin install cc-imessage-remote-control@cc-imessage-remote-control
 Restart Claude Code. Then run `/cc-imessage setup` to wire it into
 macOS Shortcuts.
 
-Full docs: https://nathan-hekman.github.io/cc-imessage-remote-control/
+Full docs: https://github.com/nathan-hekman/cc-imessage-remote-control
 
 ## Slash commands
 

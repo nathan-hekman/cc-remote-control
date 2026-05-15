@@ -36,4 +36,4 @@ If `$ARGUMENTS` is `test` or `test <phrase>`:
 If `$ARGUMENTS` is `tail`:
 - Run `tail -20 ~/.claude/.cc-imessage-logs/router.log` and show the output verbatim. Then suggest the user run `tail -f` in a real terminal if they want a live feed.
 
-Always end with a single-line pointer to the docs: `Full reference: https://nathan-hekman.github.io/cc-imessage-remote-control/`.
+Always end with a single-line pointer to the docs: `Full reference: https://github.com/nathan-hekman/cc-imessage-remote-control`.
